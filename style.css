@@ -134,8 +134,18 @@ body {
 .book-card-right .material-icons {
     justify-self: right;
     color: #555;
+    transition: transform ease 0.2s;
 }
 
 .book-card-right .material-icons:hover {
     color: red;
+    transform: scale(1.2);
+}
+
+.book-is-read {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    align-items: center;
 }
