@@ -1,14 +1,23 @@
 const myLibrary = [];
 
+const sampleBook1 = new Book("book1", "author1", "1", false);
+const sampleBook2 = new Book("book2", "author2", "2", false);
+const sampleBook3 = new Book("book3", "author3", "3", false);
+const sampleBook4 = new Book("book4", "author4", "4", false);
 
-function Book(title, author, numPages, isRead) {
+myLibrary.push(sampleBook1);
+myLibrary.push(sampleBook2);
+myLibrary.push(sampleBook3);
+myLibrary.push(sampleBook4);
+
+function Book(title, author, pageCount, isRead) {
     this.title = title;
     this.author = author;
-    this.numPages = numPages;
+    this.pageCount = pageCount;
     this.isRead = isRead;
     this.info = function() {
         const readString = isRead ? "already read." : "not read yet.";
-        return title + " by " + author + ", " + numPages + " pages, " + readString;
+        return title + " by " + author + ", " + pageCount + " pages, " + readString;
     }
 }
 
@@ -17,10 +26,10 @@ bookDisplayGrid = document.querySelector('#book-grid');
 function addBookToLibrary() {
     const title = prompt("Enter the title of the book.");
     const author = prompt("Enter the author.");
-    const numPages = prompt("Enter the number of pages.");
+    const pageCount = prompt("Enter the number of pages.");
     const isRead = prompt("Have you finished reading it?");
 
-    const userBook = new Book(title, author, numPages, isRead);
+    const userBook = new Book(title, author, pageCount, isRead);
 
     myLibrary.push(userBook);
 }
@@ -32,10 +41,16 @@ function displayLibrary() {
 }
 
 function addBookToDisplay(book) {
-    const bookCard = createBookCard(book);
-    bookDisplayGrid.appendChild(bookCard);
+    const bookCardHTML = createBookCardHTML(book);
+    bookDisplayGrid.insertAdjacentHTML('beforeend', bookCardHTML);
 }
 
-function createBookCard(book) {
-    
+function createBookCardHTML(book) {
+    return `
+    <div class="book-card">
+        <div class="book-title">${book.title}</div>
+        <div class="book-author">${book.author}</div>
+        <div class="book-page-count">${book.pageCount}</div>
+        <div class="book-is-read">${book.isRead}</div>
+    </div>`;
 }
