@@ -32,7 +32,7 @@ bookDisplayGrid.addEventListener('click', (e) => {
 
         const parentNode = isReadButton.parentNode;
         const book = myLibrary[Number(bookCard.dataset.index)];
-        book.isRead = !book.isRead;
+        book.toggleIsRead();
         isReadButton.remove();
         
         parentNode.insertAdjacentHTML("beforeend", createIsReadHTML(book.isRead));
@@ -92,6 +92,10 @@ function Book(title, author, pageCount, isRead) {
         const readString = isRead ? "already read." : "not read yet.";
         return title + " by " + author + ", " + pageCount + " pages, " + readString;
     }
+}
+
+Book.prototype.toggleIsRead = function () {
+    this.isRead = !this.isRead;
 }
 
 function displayLibrary() {
