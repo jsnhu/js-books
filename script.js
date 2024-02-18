@@ -1,14 +1,12 @@
 const myLibrary = [];
 
-const sampleBook1 = new Book("book1", "author1", "1", false);
-const sampleBook2 = new Book("book2", "author2", "2", false);
-const sampleBook3 = new Book("book3", "author3", "3", false);
-const sampleBook4 = new Book("book4", "author4", "4", false);
+const sampleBook1 = new Book("How I Got From Here to There", "Stefan Elbridge", "355", false);
+const sampleBook2 = new Book("How I Got From There to Here", "Jon Elbridge", "332", false);
+const sampleBook3 = new Book("When I Learned Where From Why", "Janet Cynthia", "112", true);
 
 myLibrary.push(sampleBook1);
 myLibrary.push(sampleBook2);
 myLibrary.push(sampleBook3);
-myLibrary.push(sampleBook4);
 
 const bookDisplayGrid = document.querySelector('#book-grid');
 
@@ -35,6 +33,8 @@ addBookForm.addEventListener('submit', (e) => {
     addBookToDisplay(book);
 
 });
+
+displayLibrary();
 
 function createBookFromFormJSON(formDataJSON) {
     const isRead = "add-book-is-read" in formDataJSON ? true : false;  
