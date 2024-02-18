@@ -10,11 +10,11 @@ myLibrary.push(sampleBook2);
 myLibrary.push(sampleBook3);
 myLibrary.push(sampleBook4);
 
-bookDisplayGrid = document.querySelector('#book-grid');
+const bookDisplayGrid = document.querySelector('#book-grid');
 
-addBookButton = document.querySelector('#add-book');
-modalTest = document.querySelector('dialog');
-modalCloseButton = document.querySelector('dialog button');
+const addBookButton = document.querySelector('#add-book');
+const modalTest = document.querySelector('dialog');
+const modalCloseButton = document.querySelector('dialog button');
 
 addBookButton.addEventListener('click', () => {
     modalTest.showModal();
@@ -23,6 +23,8 @@ addBookButton.addEventListener('click', () => {
 modalCloseButton.addEventListener('click', () => {
     modalTest.close();
 })
+
+
 
 function Book(title, author, pageCount, isRead) {
     this.title = title;
