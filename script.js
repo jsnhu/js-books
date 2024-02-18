@@ -79,7 +79,7 @@ function addBookToDisplay(book) {
 }
 
 function createBookCardHTML(book) {
-    let completionIconString = 'circle';
+    let completionIconString = 'radio_button_unchecked';
     let completionStatusString = 'Unread';
     if (book.isRead) {
         completionIconString = 'done';
