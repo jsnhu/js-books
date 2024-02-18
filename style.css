@@ -7,6 +7,7 @@
     --primary-text: #212121;
     --secondary-text: #757575;
     --divider-color: #BDBDBD;
+    --accent-highlight-color: rgb(255, 0, 0);
     font-family: 'Nunito Sans', serif;
 }
 
@@ -65,7 +66,7 @@ body {
 
   
 #add-book:active .material-icons {
-    color: red;
+    color: var(--accent-highlight-color);
 }
 
 #add-book .material-icons {
@@ -143,7 +144,7 @@ body {
 }
 
 .book-card-right .material-icons:hover {
-    color: red;
+    color: var(--accent-highlight-color);
     transform: scale(1.2);
     cursor: pointer;
 }
