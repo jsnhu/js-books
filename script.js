@@ -59,18 +59,6 @@ function Book(title, author, pageCount, isRead) {
     }
 }
 
-
-function addBookToLibrary() {
-    const title = prompt("Enter the title of the book.");
-    const author = prompt("Enter the author.");
-    const pageCount = prompt("Enter the number of pages.");
-    const isRead = prompt("Have you finished reading it?");
-
-    const userBook = new Book(title, author, pageCount, isRead);
-
-    myLibrary.push(userBook);
-}
-
 function displayLibrary() {
     bookDisplayGrid.replaceChildren();
 
