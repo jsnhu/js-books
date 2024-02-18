@@ -8,12 +8,16 @@
     --primary-text: #212121;
     --secondary-text: #757575;
     --divider-color: #BDBDBD;
-
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+.header-title {
+    font-size: 1.5rem;
 }
 
 .main-grid {
