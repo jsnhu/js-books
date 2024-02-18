@@ -10,6 +10,20 @@ myLibrary.push(sampleBook2);
 myLibrary.push(sampleBook3);
 myLibrary.push(sampleBook4);
 
+bookDisplayGrid = document.querySelector('#book-grid');
+
+addBookButton = document.querySelector('#add-book');
+modalTest = document.querySelector('dialog');
+modalCloseButton = document.querySelector('dialog button');
+
+addBookButton.addEventListener('click', () => {
+    modalTest.showModal();
+})
+
+modalCloseButton.addEventListener('click', () => {
+    modalTest.close();
+})
+
 function Book(title, author, pageCount, isRead) {
     this.title = title;
     this.author = author;
@@ -21,7 +35,6 @@ function Book(title, author, pageCount, isRead) {
     }
 }
 
-bookDisplayGrid = document.querySelector('#book-grid');
 
 function addBookToLibrary() {
     const title = prompt("Enter the title of the book.");
