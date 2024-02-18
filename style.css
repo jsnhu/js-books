@@ -158,6 +158,16 @@ body {
     grid-template-rows: 1fr;
     gap: 5px;
     align-items: center;
+    border: 2px solid rgb(131, 131, 131);
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.book-is-read:hover {
+    background-color: #ccc;
+    cursor: pointer;
 }
 
 .add-book-dialog h3 {
