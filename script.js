@@ -30,6 +30,10 @@ addBookForm.addEventListener('submit', (e) => {
 
 displayLibrary();
 
+
+// functions
+
+
 function initSampleBooks() {
     const sampleBook1 = new Book("How I Got From Here to There", "Stefan Elbridge", "355", false);
     const sampleBook2 = new Book("How I Got From There to Here", "Jon Elbridge", "332", false);
