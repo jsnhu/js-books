@@ -72,9 +72,7 @@ function addBookToLibrary() {
 }
 
 function displayLibrary() {
-    // myLibrary.forEach((book) => {
-    //     addBookToDisplay(book);
-    // });
+    bookDisplayGrid.replaceChildren();
 
     for (i=0; i<myLibrary.length; i++) {
         addBookToDisplay(myLibrary[i], i)
