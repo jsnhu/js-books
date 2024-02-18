@@ -8,6 +8,22 @@ const addBookButton = document.querySelector('#add-book');
 const addBookDialog = document.querySelector('.add-book-dialog');
 const addBookForm = document.querySelector('#add-book-form');
 
+bookDisplayGrid.addEventListener('click', (e) => {    
+    if (e.target.classList.contains('delete-card')) {
+        const targetCard = e.target.parentNode.parentNode;
+
+        let cardIterator = targetCard.nextElementSibling;
+
+        while (cardIterator) {
+            cardIterator.dataset.index = (Number(cardIterator.dataset.index) - 1).toString();
+            cardIterator = cardIterator.nextElementSibling;
+        }
+
+        const removeIndex = Number(targetCard.dataset.index);
+        myLibrary.splice(removeIndex, 1);
+        targetCard.remove();
+    }
+});
 
 addBookButton.addEventListener('click', () => {
     addBookDialog.showModal();
@@ -96,7 +112,7 @@ function createBookCardHTML(book, index) {
             </div>
         </div>
         <div class="book-card-right">
-            <span class="material-icons">delete</span>
+            <span class="material-icons delete-card">delete</span>
         </div>
     </div>`;
 
