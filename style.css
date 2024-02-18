@@ -17,9 +17,9 @@ body {
 }
 
 .header-title {
-    font-size: 4rem;
+    font-size: 5rem;
     color: transparent;
-    font-weight: 400;
+    font-weight: 100;
     align-self: center;
     justify-self: center;
     background: linear-gradient(to bottom, #000000, #005ac7); 
