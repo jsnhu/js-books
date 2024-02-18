@@ -40,7 +40,7 @@ addBookForm.addEventListener('submit', (e) => {
 
     const book = createBookFromFormJSON(formDataJSON);
     myLibrary.push(book);
-    addBookToDisplay(book);
+    addBookToDisplay(book, myLibrary.length-1);
 
 });
 
