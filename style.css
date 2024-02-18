@@ -47,6 +47,10 @@ body {
     box-shadow: 0 5px #666;
 }
 
+#add-book:hover {
+    background-color: var(--dark-primary-color);
+}
+
 #add-book:active {
     background-color: var(--dark-primary-color);
     box-shadow: 0 5px #666;
@@ -112,7 +116,7 @@ body {
 
 .book-card:hover {
     transform: translateY(-10px);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .book-title {
@@ -123,6 +127,7 @@ body {
 .book-author {
     font-size: 1.5rem;
     color: #555;
+    font-style: italic;
 }
 
 .book-card-right {
@@ -140,6 +145,11 @@ body {
 .book-card-right .material-icons:hover {
     color: red;
     transform: scale(1.2);
+    cursor: pointer;
+}
+
+.book-card-right .material-icons:active {
+    transform: translateY(10px);
 }
 
 .book-is-read {
