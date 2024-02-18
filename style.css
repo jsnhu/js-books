@@ -17,12 +17,13 @@ body {
 }
 
 .header-title {
-    font-size: 2.5rem;
-    color: var(--text-icon-color);
-    font-weight: 200;
+    font-size: 4rem;
+    color: transparent;
+    font-weight: 400;
     align-self: center;
     justify-self: center;
-
+    background: linear-gradient(to bottom, #000000, #005ac7); 
+    background-clip: text;
 }
 
 #add-book {
@@ -41,12 +42,24 @@ body {
     grid-template-rows: 1fr;
     align-items: center;
     padding: 20px 30px;
-    transition: all ease 0.5s;
+    /* transition: all ease 0.5s; */
+    transition: all ease 0.2s;
     margin: 20px;
+    box-shadow: 0 5px #666;
+
 }
 
-#add-book:hover {
+#add-book:active {
     background-color: var(--dark-primary-color);
+    box-shadow: 0 5px #666;
+    transform: translateY(-10px);
+    color: #ddd;
+    /* font-size: larger; */
+  }
+
+  
+#add-book:active .material-icons {
+    color: red;
 }
 
 #add-book .material-icons {
