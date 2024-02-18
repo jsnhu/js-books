@@ -1,12 +1,6 @@
 const myLibrary = [];
 
-const sampleBook1 = new Book("How I Got From Here to There", "Stefan Elbridge", "355", false);
-const sampleBook2 = new Book("How I Got From There to Here", "Jon Elbridge", "332", false);
-const sampleBook3 = new Book("When I Learned Where From Why", "Janet Cynthia", "112", true);
-
-myLibrary.push(sampleBook1);
-myLibrary.push(sampleBook2);
-myLibrary.push(sampleBook3);
+initSampleBooks();
 
 const bookDisplayGrid = document.querySelector('#book-grid');
 
@@ -35,6 +29,16 @@ addBookForm.addEventListener('submit', (e) => {
 });
 
 displayLibrary();
+
+function initSampleBooks() {
+    const sampleBook1 = new Book("How I Got From Here to There", "Stefan Elbridge", "355", false);
+    const sampleBook2 = new Book("How I Got From There to Here", "Jon Elbridge", "332", false);
+    const sampleBook3 = new Book("When I Learned Where From Why", "Janet Cynthia", "112", true);
+
+    myLibrary.push(sampleBook1);
+    myLibrary.push(sampleBook2);
+    myLibrary.push(sampleBook3);
+}
 
 function createBookFromFormJSON(formDataJSON) {
     const isRead = "add-book-is-read" in formDataJSON ? true : false;  
@@ -68,17 +72,21 @@ function addBookToLibrary() {
 }
 
 function displayLibrary() {
-    myLibrary.forEach((book) => {
-        addBookToDisplay(book);
-    });
+    // myLibrary.forEach((book) => {
+    //     addBookToDisplay(book);
+    // });
+
+    for (i=0; i<myLibrary.length; i++) {
+        addBookToDisplay(myLibrary[i], i)
+    }
 }
 
-function addBookToDisplay(book) {
-    const bookCardHTML = createBookCardHTML(book);
+function addBookToDisplay(book, index) {
+    const bookCardHTML = createBookCardHTML(book, index);
     bookDisplayGrid.insertAdjacentHTML('beforeend', bookCardHTML);
 }
 
-function createBookCardHTML(book) {
+function createBookCardHTML(book, index) {
     let completionIconString = 'radio_button_unchecked';
     let completionStatusString = 'Unread';
     if (book.isRead) {
@@ -87,7 +95,7 @@ function createBookCardHTML(book) {
     }
 
     return `
-    <div class="book-card">
+    <div class="book-card" data-index='${index}'>
         <div class="book-card-left">
             <div class="book-title">${book.title}</div>
             <div class="book-author">${book.author}</div>
