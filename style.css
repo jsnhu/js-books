@@ -1,5 +1,5 @@
 :root {
-    --dark-primary-color: #1976D2;
+    --dark-primary-color: #0169d0;
     --light-primary-color: #BBDEFB;
     --primary-color: #2196F3;
     --text-icon-color: #FFFFFF;
@@ -7,7 +7,7 @@
     --primary-text: #212121;
     --secondary-text: #757575;
     --divider-color: #BDBDBD;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nunito Sans', serif;
 }
 
 body {
@@ -42,11 +42,9 @@ body {
     grid-template-rows: 1fr;
     align-items: center;
     padding: 20px 30px;
-    /* transition: all ease 0.5s; */
     transition: all ease 0.2s;
     margin: 20px;
     box-shadow: 0 5px #666;
-
 }
 
 #add-book:active {
@@ -54,8 +52,12 @@ body {
     box-shadow: 0 5px #666;
     transform: translateY(-10px);
     color: #ddd;
-    /* font-size: larger; */
-  }
+}
+
+.button-text {
+    font-weight: 200;
+}
+
 
   
 #add-book:active .material-icons {
@@ -88,11 +90,17 @@ body {
     grid-auto-rows: 300px;
     gap: 20px;
     padding: 20px;
+    box-shadow: inset 0px 5px 5px rgb(134, 134, 134);
 }
 
 .book-card {
     background-color: #FFFFFF;
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgb(77, 77, 77);
-    /* outline: 2px red solid; */
+    transition: transform ease 0.5s;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    transform: scale(1.05);
 }
