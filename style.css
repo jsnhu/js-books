@@ -29,8 +29,9 @@ body {
     background-color: var(--accent-color);
     color: #FFFFFF;
     font-size: 1.5rem;
-    width: 250px;
-    height: 100px;
+    min-width: 300px;
+    width: min(100%, 230px);
+    height: min(100%, 100px);
     border-radius: 50px;
     border: none;
     align-self: center;
@@ -55,7 +56,7 @@ body {
 .main-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: min-content 5fr;
     height: 100vh;
 }
 
@@ -63,8 +64,8 @@ body {
     background-color: var(--primary-color);
     border-top: 15px solid var(--dark-primary-color);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 1fr;
 }
 
 .content {
