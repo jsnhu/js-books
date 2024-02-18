@@ -55,9 +55,35 @@
         </div>
     </div>
 
-    <dialog> 
-        <div>MODAL TEST</div>
-        <button>CLOSE</button>
+    <dialog class="add-book-dialog">
+        <form method="dialog">
+            <h3>Add Book</h3> 
+
+            <div class="form-item">
+                <label for="add-book-title">Title</label>
+                <input type="text" id="add-book-title" name="add-book-title" required>
+            </div>
+
+            <div class="form-item">
+                <label for="add-book-author">Author</label>
+                <input type="text" id="add-book-author" name="add-book-author" required>
+            </div>
+
+            <div class="form-item">
+                <label for="add-book-page-count">Page Count</label>
+                <input type="number" id="add-book-page-count" name="add-book-page-count" required>
+            </div>
+
+            <div class="form-item">
+                <label for="add-book-is-read">Completed?</label>
+                <input type="checkbox" name="add-book-is-read" id="add-book-is-read">
+            </div>
+
+            <div class="form-item">
+                <button type="submit" id="add-book-submit">Submit</button>
+            </div>
+        </form>
+        
     </dialog>
     
 </body>
