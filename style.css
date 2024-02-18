@@ -98,9 +98,44 @@ body {
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgb(77, 77, 77);
     transition: transform ease 0.5s;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.book-card-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 2fr min-content min-content;
 }
 
 .book-card:hover {
     transform: translateY(-10px);
     transform: scale(1.05);
+}
+
+.book-title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.book-author {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.book-card-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+}
+
+.book-card-right .material-icons {
+    justify-self: right;
+    color: #555;
+}
+
+.book-card-right .material-icons:hover {
+    color: red;
 }
