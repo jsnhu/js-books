@@ -1,5 +1,4 @@
 :root {
-    font-size: 1.5rem;
     --dark-primary-color: #1976D2;
     --light-primary-color: #BBDEFB;
     --primary-color: #2196F3;
@@ -12,6 +11,7 @@
 }
 
 body {
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
 }
@@ -24,8 +24,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 6fr;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
 }
 
 .header {
@@ -35,4 +35,15 @@ body {
 
 .content {
     background-color: var(--light-primary-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    outline: 2px red solid;
 }

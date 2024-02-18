@@ -12,6 +12,8 @@ function Book(title, author, numPages, isRead) {
     }
 }
 
+bookDisplayGrid = document.querySelector('#book-grid');
+
 function addBookToLibrary() {
     const title = prompt("Enter the title of the book.");
     const author = prompt("Enter the author.");
@@ -21,4 +23,19 @@ function addBookToLibrary() {
     const userBook = new Book(title, author, numPages, isRead);
 
     myLibrary.push(userBook);
+}
+
+function displayLibrary() {
+    myLibrary.forEach((book) => {
+        addBookToDisplay(book);
+    });
+}
+
+function addBookToDisplay(book) {
+    const bookCard = createBookCard(book);
+    bookDisplayGrid.appendChild(bookCard);
+}
+
+function createBookCard(book) {
+    
 }
