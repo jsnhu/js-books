@@ -17,14 +17,15 @@ body {
 }
 
 .header-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--text-icon-color);
+    font-weight: 200;
 }
 
 .main-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6fr;
-    width: 100vw;
+    grid-template-rows: 200px min-content;
     height: 100vh;
 }
 
@@ -45,5 +46,6 @@ body {
 .book-card {
     background-color: #FFFFFF;
     border-radius: 20px;
-    outline: 2px red solid;
+    box-shadow: 5px 5px 10px rgb(77, 77, 77);
+    /* outline: 2px red solid; */
 }
