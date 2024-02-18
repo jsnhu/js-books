@@ -160,3 +160,8 @@ body {
     gap: 5px;
     align-items: center;
 }
+
+.add-book-dialog h3 {
+    margin: 0;
+    padding: 0;
+}
