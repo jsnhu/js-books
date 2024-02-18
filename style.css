@@ -103,7 +103,7 @@ body {
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgb(77, 77, 77);
     /* transition: border ease 1.5s; */
-    padding: 20px;
+    padding: 40px;
     display: grid;
     grid-template-columns: 9fr 1fr;
     grid-template-rows: 1fr;
