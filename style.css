@@ -91,7 +91,7 @@ body {
 .content {
     background-color: var(--light-primary-color);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     grid-auto-rows: 300px;
     gap: 20px;
     padding: 20px;
@@ -173,4 +173,12 @@ body {
 .add-book-dialog h3 {
     margin: 0;
     padding: 0;
+}
+
+.book-is-read.completed-book {
+    background-color: #88ff888c;
+}
+
+.book-is-read.unread-book {
+    background-color: none;
 }

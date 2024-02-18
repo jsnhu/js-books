@@ -25,6 +25,21 @@ bookDisplayGrid.addEventListener('click', (e) => {
     }
 });
 
+bookDisplayGrid.addEventListener('click', (e) => {  
+    const isReadButton = e.target.closest('.book-is-read');  
+    if (isReadButton) {
+        const bookCard = isReadButton.parentNode.parentNode;
+
+        const parentNode = isReadButton.parentNode;
+        const book = myLibrary[Number(bookCard.dataset.index)];
+        book.isRead = !book.isRead;
+        isReadButton.remove();
+        
+        parentNode.insertAdjacentHTML("beforeend", createIsReadHTML(book.isRead));
+
+    }
+});
+
 addBookButton.addEventListener('click', () => {
     addBookDialog.showModal();
 });
@@ -93,27 +108,35 @@ function addBookToDisplay(book, index) {
 }
 
 function createBookCardHTML(book, index) {
-    let completionIconString = 'radio_button_unchecked';
-    let completionStatusString = 'Unread';
-    if (book.isRead) {
-        completionIconString = 'done';
-        completionStatusString = 'Completed';
-    }
-
     return `
     <div class="book-card" data-index='${index}'>
         <div class="book-card-left">
             <div class="book-title">${book.title}</div>
             <div class="book-author">${book.author}</div>
             <div class="book-page-count">${book.pageCount} pages</div>
-            <div class="book-is-read">
-                <span class="material-icons">${completionIconString}</span>
-                ${completionStatusString}
-            </div>
+            ${createIsReadHTML(book.isRead)}
         </div>
         <div class="book-card-right">
             <span class="material-icons delete-card">delete</span>
         </div>
     </div>`;
 
+}
+
+function createIsReadHTML(isRead) {
+    let completionIconString = 'radio_button_unchecked';
+    let completionStatusString = 'Unread';
+    let completionStatusClass = 'unread-book';
+
+    if (isRead) {
+        completionIconString = 'done';
+        completionStatusString = 'Completed';
+        completionStatusClass = 'completed-book';
+    }
+
+    return `
+        <div class="book-is-read ${completionStatusClass}">
+            <span class="material-icons">${completionIconString}</span>
+            ${completionStatusString}
+        </div>`;
 }
