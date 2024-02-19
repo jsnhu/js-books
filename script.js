@@ -56,11 +56,17 @@ addBookForm.addEventListener('submit', (e) => {
     const book = createBookFromFormJSON(formDataJSON);
     myLibrary.push(book);
     addBookToDisplay(book, myLibrary.length-1);
-
+    addBookForm.reset();
 });
 
 displayLibrary();
 
+
+const dialogCloseButton = document.querySelector('#close-dialog');
+
+dialogCloseButton.addEventListener('click', () => {
+    addBookDialog.close();
+})
 
 // functions
 
