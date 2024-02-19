@@ -265,3 +265,36 @@ body {
 #add-book-is-read:checked {
     color: var(--light-primary-color);
 }
+
+.form-header {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 1fr;
+}
+
+.form-header h3,
+#close-dialog {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#close-dialog {
+    width: 40px;
+    height: 40px;
+    justify-self: right;
+    align-self: center;
+    background-color: #bbb;
+    border-radius: 50%;
+    border: none;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0px 3px 0px black;
+    transition: transform ease 0.3s;
+}
+
+#close-dialog::after,
+#close-dialog:hover {
+    transform: translateY(5px);
+    background-color: #ff8888;
+}
